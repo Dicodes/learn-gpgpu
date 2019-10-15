@@ -32,7 +32,7 @@
 #define CUDA_CALL(F, ...)\
     if((F(__VA_ARGS__)) != cudaSuccess){\
         cudaError_t e = cudaGetLastError();\
-        printf("CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));\
+        printf("Failure in CUDA %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));\
         return(EXIT_FAILURE);\
     }
 
